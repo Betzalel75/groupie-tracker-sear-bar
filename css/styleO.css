@@ -1,0 +1,600 @@
+/*--Background--*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    background-color: rgb(0, 0, 0);
+    z-index: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.container-hexagon{
+    position: fixed;
+    z-index: 0;
+    margin: -32px;
+    padding: 0;
+    margin-top: -17vh;
+}
+
+.row{
+    display: inline-flex;
+    margin-top: -32px;
+    margin-left: -50px;
+}
+
+.row:nth-child(even){
+    margin-left: 2px;
+}
+
+body .row:hover{
+    box-shadow: 0px 0px 19px 15px #408EF3;
+}
+
+.hexagon{
+    width: 100px;
+    height: 110px;
+    margin: 2px;
+    background-color: rgb(19, 19, 19);
+    clip-path: polygon(50% 0, 100% 25%,
+    100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: animation 4s linear infinite;
+}
+
+.hexagon:hover{
+    box-shadow: 0px 0px 30px 15px #408EF3;
+    background-color: #0f0;
+    transition: 0s;
+}
+
+@keyframes animation {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.hexagon::after{
+    content: '';
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    background-color: rgb(19, 19, 19);
+    clip-path: polygon(50% 0, 100% 25%,
+    100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.03);
+    z-index: 3;
+}
+
+/*Fin du Background*/
+/*-----------------*/
+
+/* body {
+    background: url('images/349131.jpg') fixed no-repeat center/cover;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+} */
+
+header {
+    position: relative;
+    z-index: 1;
+    color: #e8ebef;
+    margin-bottom: 3px;
+    border: #e8ebef solid;
+    width: 80vw;
+    background-color: #ffffff30;
+    backdrop-filter: blur(5px);
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 5vh;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    margin-right: 0%;
+}
+
+.navbar li {
+    margin: 2px 0px 2px 0px;
+}
+
+.navbar li:first-child {
+    margin-right: auto;
+    margin-left: 8%;
+}
+
+.navbar li:last-child {
+    margin-right: 100px;
+}
+
+li.home {
+    padding-left: 2%;
+}
+
+/*Barrede recherche*/
+
+.navbar li.search-bar {
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li.search-bar input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.navbar li.search-bar button[type="submit"] {
+    padding: 5px 10px;
+    background-color: #20078f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar li.search-bar button[type="submit"]:hover {
+    box-shadow: 0px 0px 19px 5px #b4bbc9c2;
+}
+
+a {
+    text-decoration: none;
+    color: #e8ebef;
+}
+
+a:active {
+    color: rgb(11, 104, 243);
+}
+
+a:hover {
+    color: rgb(11, 104, 243);
+}
+
+h1{
+    position: relative;
+    margin-top: 5vh;
+    color: #f8f8fc;
+    margin-left: 11vw;
+    margin-right: 09vw;
+    text-align: center;
+    forced-color-adjust: #fff;
+    border: #ccc solid;
+    background-color: #16141462;
+}
+
+.info {
+    margin-top: 13vh;
+    margin-left: 5%;
+}
+
+
+.artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.artist {
+    position: relative;
+    padding-top: 10px;
+    width: 300px;
+    height: 240px;
+    text-align: center;
+    margin: 15px;
+    background-color: #00000080;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+}
+
+.artist:hover {
+    background-color: #aaa2a246;
+    backdrop-filter: blur(5px);
+    border: #000000 solid 1px;
+    transform: rotate(360deg);
+}
+
+
+
+.artist img {
+    position: absolute;
+    top: 35px;
+    left: 30%;
+    height: 50%;
+    object-fit: cover;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    z-index: 0;
+}
+
+.artist:hover img {
+    transform: rotate(-360deg);
+    z-index: -1;
+}
+
+.artist::after {
+    box-shadow: 0px 0px 19px 5px #7882cd;
+}
+
+
+
+@keyframes charge {
+    to {
+        transform: scale(1.2);
+        backdrop-filter: blur(5px);
+    }
+}
+
+.artist img {
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.info .artists .artist a:hover~.groupe #message {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: left;
+    flex: content;
+    position: relative;
+    visibility: visible;
+    flex-direction: column;
+}
+
+.artist h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #e8ebef;
+}
+
+.artist p {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.artist ul {
+    padding-left: 0;
+    list-style-type: none;
+    color: #fff;
+}
+
+.artist li {
+    margin-bottom: 5px;
+}
+
+.groupe {
+    width: 100%;
+    background-color: rgb(43, 41, 41);
+    display: block;
+    padding: 10px;
+    visibility: visible;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.groupe #message {
+    font-size: 16px;
+    visibility: hidden;
+    font-style: italic;
+}
+
+.artist a:hover~.groupe #voir {
+    visibility: hidden;
+}
+
+.groupe {
+    margin-top: 141px;
+}
+
+.groupe p {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.groupe ul {
+    grid-column: 2;
+}
+
+/* Informations de chaque Artist */
+
+.ap {
+    position: absolute;
+    display: flex;
+    margin-left: 10%;
+    width: 100%;
+}
+
+.content {
+    display: inline-flex;
+    margin-top: 0%;
+    margin-bottom: 20%;
+}
+
+.containt {
+    margin-top: 0px;
+    margin-bottom: 80px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.containt img {
+    width: 35%;
+    margin-left: 20%;
+    margin-bottom: 70px;
+}
+
+.chambre2 {
+    margin-top: 0%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 100px;
+    z-index: -1000;
+}
+
+.chambre2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(50px);
+}
+
+.contact-box {
+    border-radius: 5px;
+    max-width: 1080px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+    background-color: #26242494;
+    box-shadow: 0px 0px 19px 5px #7882cd;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.right {
+    color: #fff;
+    padding: 25px 40px;
+    cursor: pointer;
+}
+
+h4 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+h4:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: pink;
+}
+
+.infos {
+    display: flex;
+    margin: 10%;
+}
+
+.chambre2 {
+    margin-top: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 100px;
+    z-index: -1000;
+}
+
+.chambre2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(50px);
+}
+
+.contact-box {
+    border-radius: 5px;
+    max-width: 850px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+    background-color: #26242494;
+    box-shadow: 0px 0px 19px 5px #7882cd;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.right {
+    color: #fff;
+    padding: 25px 40px;
+    cursor: pointer;
+}
+
+.right p {
+    font-family: 'Times New Roman';
+    color: blue;
+    font-size: 14px;
+}
+
+h4 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+h4:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: pink;
+}
+
+/* Media Queries */
+
+
+/* Media Query pour les écrans de taille 480x320 */
+
+@media (max-width: 810px)
+
+/*and (max-height: 340px)*/
+    {
+    .navbar li {
+        margin-left: 25px;
+        margin-right: 15px;
+        display: inline-block;
+        justify-content: center;
+    }
+
+    .info {
+        margin-top: 10%;
+        margin-left: 20%;
+        width: 250px;
+    }
+
+    .artists {
+        margin-top: 10%;
+    }
+
+    .artist {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    /* Div des informations par artist */
+   .containt img {
+        width: 35%;
+        margin-left: 1%;
+    }
+
+    .infos {
+        width: 130%;
+        margin: 0;
+    }
+
+    .chambre2 {
+        padding: 10px 50px;
+        font-size: 10px;
+    }
+
+    .contact-box {
+        max-width: 400px;
+        margin-top: 48%;
+    }
+
+    .right {
+        padding: 15px 25px;
+    }
+
+    h4 {
+        font-size: 12px;
+    }
+}
+
+
+/* max-width: 417px */
+@media (max-width: 417px){
+.navbar li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .navbar li:first-child {
+    margin-left: 10;
+    margin-right: 10px;
+  }
+
+  .navbar li.search-bar {
+    font-size: 9px;
+    width: 45vw;
+    margin-bottom: 20px;
+  }
+
+.navbar li.search-bar input[type="text"] {
+ font-size: 140%;
+  width: 90%;
+}
+
+.navbar li.search-bar button[type="submit"] {
+  font-size: 140%;
+}
+
+.navbar li.search-bar button[type="submit"]:hover {
+  box-shadow: 0px 0px 19px 5px #b4bbc9c2;
+}
+}
+
+
+/* max-width: 360px */
+@media (max-width: 375px){
+    .artist{
+        margin-left: -12%;
+        width: 100%;
+        height: 90%;
+    }
+    .groupe{
+        margin-top: 40%;
+        visibility: hidden;
+    }
+    .artist img:hover{
+        margin-top: 10%;
+    }
+    .artist:hover {
+        padding-top: 39px;
+        width: 290%;
+    }
+}
