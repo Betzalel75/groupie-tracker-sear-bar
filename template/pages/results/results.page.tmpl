@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleO.css?v=1.1">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <title>Artists</title>
+    <link rel="shortcut icon" href="/css/images/Image1reverse.ico" type="images/ico">
+</head>
+
+<body>
+    <header>
+        <ul class="navbar">
+            <li><a href="javascript:history.back()">Back</a></li>
+            <li><a href="artist">Artist</a></li>
+            <li class="home"><a href="/">Home</a></li>
+            {{template "search" .}}
+        </ul>
+    </header>
+    <!-- BACKGROUND -->
+    <div class="container-hexagon">
+        {{template "design"}}
+        {{template "design"}}
+    </div>
+    <!-- FIN DU BACKGROUND -->
+
+    <section class="info">
+        <div class="artists">
+            {{range .Artists}}
+            <div class="artist">
+                <h2 class="artist-name">{{.Name}}</h2>
+                <a href="info?id={{.Id}}">
+                    <img src="{{.Image}}" alt="{{.Name}} Image">
+                </a>
+                <div class="groupe">
+                    <p id="voir">Year Active: {{.CreationDate}}</p>
+                    <p id="message">Voir les détails</p>
+                    <p id="voir">First Album: {{.FirstAlbum}}</p>
+                </div>
+            </div>
+            {{end}}
+            {{if eq (len .Artists) 0}}
+            <div  class="no_match">
+                <h1>No Match!</h1>
+                <img src="/css/images/sad-sorry.gif">
+            </div>
+            {{end}}
+        </div>
+    </section>
+
+</body>
+
+</html>

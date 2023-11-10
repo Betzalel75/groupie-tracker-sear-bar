@@ -2,7 +2,6 @@ package tools
 
 import (
 	"net/http"
-	"text/template"
 )
 
 type Error struct {
@@ -18,13 +17,5 @@ func ErrorHandler(w http.ResponseWriter, code int, warning string, message strin
 		Message: message,
 	}
 	w.WriteHeader(error.Code)
-	t, err := template.ParseFiles("./templates/errors.html")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	err = t.ExecuteTemplate(w, "errors", error)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
+	RenderTemplate(w, "errors", "error", error)
 }

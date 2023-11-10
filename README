@@ -1,19 +1,29 @@
 # Groupie Trackers Project
 
-This project is a web application that allows users to view information about various artists. The application utilizes the Groupie Trackers API to retrieve data about the artists.
+This project is a sub-part of the Groupie-Tracker project which is a web application that allows users to view information about various artists. The app uses the Groupie Trackers API to retrieve artist data.
+In this part it is a question of integrating a search bar which will allow users to search for an artist or a group from:
+- by name,
+- a date,
+- a concert venue.
+
+## Prerequisites
+
+Before getting started, make sure you have the following software installed on your system:
+
+   Golang: You must have Golang version 1.13 or higher installed on your computer to run this application.
 
 ## Installation
 
 1. Clone this repository to your local machine:
 
    ```
-   git clone https://learn.zone01dakar.sn/git/eibounda/groupie-tracker.git
+   git clone https://learn.zone01dakar.sn/git/eibounda/groupie-tracker-search-bar.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd groupie-trackers
+   cd groupie-tracker-search-bar
    ```
 
 3. Run the application:
@@ -23,6 +33,10 @@ This project is a web application that allows users to view information about va
    ```
 
    The application will be accessible at `http://localhost:8080` in your browser.
+
+## Configuration
+
+If your application requires specific configuration, please include instructions here on how to set environment variables, modify configuration files, etc.
 
 ## Features
 
@@ -44,10 +58,26 @@ The application exposes the following endpoints:
 
 - The `main.go` file contains the `main` function that starts the HTTP server and defines the URL handlers.
 - The `tools` package includes the `Artist`, `Location`, `Date`, `Relation` and `Error` data structures.
-- The `tools` package also includes the `getArtist.go`, `handleHome.go`, `handleArtist.go`, `returnArtist.go`, `handleInfo.go`and `errorHandler.go` functions used to handle HTTP requests and provide the necessary data to HTML templates.
+- The `tools` package also includes the `getArtist.go`, `handleHome.go`, `handleArtist.go`, `returnArtist.go`, `handleInfo.go`, `search.go`, `handleSearch.go` and `errorHandler.go` functions used to handle HTTP requests and provide the necessary data to HTML templates.
 - The `templates` directory contains the HTML templates used to display the application's pages.
 - The `css` directory contains the CSS files and the images (located in the `images` directory) used for page styling.
 
 ## Authors
 
-This project was created by [eibounda](https://learn.zone01dakar.sn/git/eibounda/groupie-tracker.git).
+This project was created by [eibounda, jefaye and fatidiop](https://learn.zone01dakar.sn/git/eibounda/groupie-tracker-search-bar.git).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contribution
+
+We welcome contributions to this project. If you'd like to contribute, follow these steps:
+
+   Fork this repository on GitHub.
+   - Create a branch for your contribution: `git checkout -b my-contribution`
+   - Make your changes and commit them: `git commit -m "Add a new feature"`
+   - Push your changes to your fork: `git push origin my-contribution`
+   - Create a Pull Request to our main repository.
+
+We will review your contributions and merge them if they align with the project's standards. Thank you for contributing!

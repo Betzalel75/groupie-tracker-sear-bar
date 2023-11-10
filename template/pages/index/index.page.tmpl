@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=1.2">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <title>Groupie-Tracker</title>
+  <link rel="shortcut icon" href="/css/images/Image1reverse.ico" type="images/ico">
+  <style>
+    .left {
+      height: 100%;
+      background: url("{{.Artist.Image}}") no-repeat center;
+      background-size: cover;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 810px) {
+      .left {
+        height: 50%;
+        margin-left: 2vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul class="navbar">
+      <li><a href="artist">Artist</a></li>
+      {{template "search" .}}
+    </ul>
+  </header>
+
+  <!-- BACKGROUND -->
+  <div class="container-hexagon">
+    {{template "design"}}
+    {{template "design"}}
+  </div>
+  <!-- FIN DU BACKGROUND -->
+
+  <p id="o">Welcome to the platform for music lovers!</p>
+  <div class="content">
+    <div class="containt">
+      <img src="/css/images/Image1.png" alt="">
+    </div>
+    <a href="info?id={{.Artist.Id}}">
+      <div class="infos">
+        <div class="chambre2">
+          <div class="contact-box">
+            <div class="left">
+
+            </div>
+            <div class="right">
+              <h4 id="image">{{.Artist.Name}}</h4>
+              <p>Year Active: {{.Artist.CreationDate}}</p>
+              <p>First Album: {{.Artist.FirstAlbum}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</body>
+
+</html>

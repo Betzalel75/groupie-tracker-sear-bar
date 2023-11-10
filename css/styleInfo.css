@@ -1,17 +1,17 @@
 /*--Background--*/
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{ 
+body {
     background-color: rgb(0, 0, 0);
     z-index: 0;
     font-family: 'Dancing Script', cursive;
     font-size: 20px;
 }
 
-.container-hexagon{
+.container-hexagon {
     position: fixed;
     z-index: 0;
     margin: -32px;
@@ -19,46 +19,47 @@ body{
     margin-top: -17vh;
 }
 
-.row{
+.row {
     display: inline-flex;
     margin-top: -32px;
     margin-left: -50px;
 }
 
-.row:nth-child(even){
+.row:nth-child(even) {
     margin-left: 2px;
 }
 
-body .row:hover{
+body .row:hover {
     box-shadow: 0px 0px 19px 15px #408EF3;
 }
 
-.hexagon{
+.hexagon {
     width: 100px;
     height: 110px;
     margin: 2px;
     background-color: rgb(19, 19, 19);
     clip-path: polygon(50% 0, 100% 25%,
-    100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            100% 75%, 50% 100%, 0% 75%, 0% 25%);
     animation: animation 4s linear infinite;
 }
 
-.hexagon:hover{
+.hexagon:hover {
     box-shadow: 0px 0px 30px 15px #408EF3;
     background-color: #0f0;
     transition: 0s;
 }
 
 @keyframes animation {
-    0%{
+    0% {
         filter: hue-rotate(0deg);
     }
-    100%{
+
+    100% {
         filter: hue-rotate(360deg);
     }
 }
 
-.hexagon::after{
+.hexagon::after {
     content: '';
     position: absolute;
     top: 4px;
@@ -67,10 +68,10 @@ body .row:hover{
     right: 4px;
     background-color: rgb(19, 19, 19);
     clip-path: polygon(50% 0, 100% 25%,
-    100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.hexagon::before{
+.hexagon::before {
     content: '';
     position: absolute;
     width: 50%;
@@ -86,8 +87,6 @@ header {
     position: relative;
     z-index: 1;
     color: #e8ebef;
-    font-family: 'Dancing Script', cursive;
-    color: #e8ebef;
     margin-bottom: 3px;
     border: #e8ebef solid;
     width: 80vw;
@@ -97,17 +96,18 @@ header {
     margin-right: 10vw;
     margin-top: 5vh;
     clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
-
 }
 
+
 .navbar {
+    font-family: 'Dancing Script', cursive !important;
     display: flex;
     justify-content: space-between;
     padding: 0;
     list-style: none;
     font-size: 20px;
     margin-right: 0%;
-    
+
 }
 
 .navbar li {
@@ -134,7 +134,7 @@ li.home {
     align-items: center;
 }
 
-.second-search-bar{
+.second-search-bar {
     position: relative;
     z-index: 0;
     padding: 5px;
@@ -151,6 +151,7 @@ li.home {
     padding: 5px;
     border: 1px solid #ccc;
 }
+
 .navbar li.search-bar button[type="submit"] {
     padding: 5px 10px;
     background-color: #20078f;
@@ -158,6 +159,7 @@ li.home {
     border: none;
     cursor: pointer;
 }
+
 .second-search-bar button[type="submit"] {
     padding: 5px 10px;
     background-color: #20078f;
@@ -191,14 +193,15 @@ a:hover {
 
 /* Informations de chaque Artist */
 
-.ap {/*2ème  couche*/
+.ap {
+    /*2ème  couche*/
     position: relative;
     z-index: 1;
     display: flex;
     margin-left: 5vw;
     margin-right: 5vw;
-    margin-bottom: 30vh;
-    width: 90vw;
+    margin-bottom: 10vh;
+    width: 60vw;
     padding: 0%;
 }
 
@@ -284,7 +287,7 @@ h4:after {
 
 .contact-box {
     border-radius: 5px;
-    max-width: 850px;
+    min-width: 650px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
@@ -296,7 +299,17 @@ h4:after {
     overflow: hidden;
     z-index: 0;
 }
-.contact-box .right p, ul{
+
+.left {
+    height: 50%;
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-bottom: 20%;
+    border-radius: 5px;
+}
+
+
+.contact-box .right p, ul {
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -304,7 +317,7 @@ h4:after {
     color: #fff;
     padding: 25px 40px;
     cursor: pointer;
-    
+
 }
 
 .right p, .rightld .leftld {
@@ -331,18 +344,19 @@ h4:after {
     border-radius: 2px;
     background-color: pink;
 }
+
 /* Locations & Dates */
 
-.locat-date{
+.locat-date {
     font-family: 'Times New Roman', Times, serif;
     list-style: none;
     text-decoration: none;
     padding: 3% 4%;
     color: #fff;
-    position:relative;
+    position: relative;
     margin-left: 5vw;
     border-radius: 5px;
-    max-width: 850px;
+    min-width: 400px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
@@ -353,12 +367,55 @@ h4:after {
     box-shadow: 0px 0px 20px 5px #87b0eec2;
     overflow: hidden;
     z-index: 0;
-  }
+}
+
+
+/* Relations */
+.titreRelation {
+    position: relative;
+    text-align: center;
+    color: #e8ebef;
+    font-size: 160%;
+    z-index: 1;
+}
+
+/* Styles pour le conteneur de contenu de relation */
+.relation-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Styles pour chaque élément de relation */
+.relations {
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    list-style: none;
+    text-decoration: none;
+    padding: 3% 4%;
+    color: #fff;
+    border-radius: 5px;
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff30;
+    backdrop-filter: blur(3px);
+    box-shadow: 0px 0px 20px 5px #87b0eec2;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto 25vh; /* Centrer horizontalement et ajouter une marge inférieure */
+}
+
+/* Styles pour les éléments de dates et de lieux à l'intérieur de .relations */
+.relations p {
+    margin: 0; /* Réinitialiser les marges pour les paragraphes internes */
+}
 
 /* Media Queries */
 
-@media (max-width: 810px)
-    {
+@media (max-width: 810px) {
     .navbar li {
         margin-left: 25px;
         margin-right: 15px;
@@ -371,19 +428,22 @@ h4:after {
     }
 
     /* Div des informations par artist */
-    .ap{
+    .ap {
         padding: 0;
         margin-top: 3%
     }
+
     .infos {
         width: 100%;
         margin: 0;
     }
-    .containt img{
+
+    .containt img {
         margin-right: 80vh;
-        width:100%;
+        width: 100%;
         min-width: 150px;
     }
+
     .chambre2 {
         padding: 10px 50px;
         margin: 0;
@@ -395,69 +455,83 @@ h4:after {
         width: 400px;
         margin-top: 0%;
     }
-    .locat-date{
+
+    .locat-date {
         width: 400px;
         margin-top: 2%;
         margin-left: 0;
         margin-right: 0px;
     }
 
+    .relations {
+        width: 400px;
+        margin-top: 2%;
+        margin-left: 0;
+        margin-right: 0px
+    }
+
     .right {
         padding: 15px 25px;
     }
-        .right p, ul{
-            font-size:16px
-        }
+
+    .right p,
+    ul {
+        font-size: 16px
+    }
+
     .rightld {
         padding: 0px;
         margin-right: -12px;
-        font-size:14px;
+        font-size: 14px;
     }
-        .leftld{
-            font-size: 16px;
-            padding-left: 12px;
-        }
+
+    .leftld {
+        font-size: 16px;
+        padding-left: 12px;
+    }
+
     h4 {
         font-size: 16px;
     }
 }
 
 /* max-width: 587px */
-@media (max-width: 587px){
-.navbar li {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+@media (max-width: 587px) {
+    .navbar li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
-  .navbar li:first-child {
-    margin-left: 10;
-    margin-right: 10px;
-  }
+    .navbar li:first-child {
+        margin-left: 10;
+        margin-right: 10px;
+    }
 
-  .navbar li.search-bar {
-    font-size: 9px;
-    width: 5vw;
-    margin-bottom: 20px;
-  }
+    .navbar li.search-bar {
+        font-size: 9px;
+        width: 5vw;
+        margin-bottom: 20px;
+    }
 
-.navbar li.search-bar input[type="text"] {
- font-size: 140%;
-  width: 100%;
-}
+    .navbar li.search-bar input[type="text"] {
+        font-size: 140%;
+        width: 100%;
+    }
 
-.navbar li.search-bar button[type="submit"] {
-  font-size: 140%;
-}
+    .navbar li.search-bar button[type="submit"] {
+        font-size: 140%;
+    }
 
-.navbar li.search-bar button[type="submit"]:hover {
-  box-shadow: 0px 0px 19px 5px #b4bbc9c2;
-}
-    .containt img{
+    .navbar li.search-bar button[type="submit"]:hover {
+        box-shadow: 0px 0px 19px 5px #b4bbc9c2;
+    }
+
+    .containt img {
         margin-right: 0vh;
-        width:100%;
+        width: 100%;
         min-width: 150px;
     }
-    
+
     .chambre2 {
         padding: 10px 50px;
         margin: 0;
@@ -469,7 +543,8 @@ h4:after {
         width: 100%;
         margin-top: 0%;
     }
-    .locat-date{
+
+    .locat-date {
         width: 90%;
         margin-top: 2%;
     }
@@ -477,49 +552,72 @@ h4:after {
     .right {
         padding: 15px 25px;
     }
-        .right p, ul{
-            font-size:16px
-        }
+
+    .right p,
+    ul {
+        font-size: 16px
+    }
+
     .rightld {
         padding: 0px;
         margin-right: -12px;
-        font-size:14px;
+        font-size: 14px;
     }
-        .leftld{
-            font-size: 16px;
-            padding-left: 12px;
-        }
+
+    .leftld {
+        font-size: 16px;
+        padding-left: 12px;
+    }
+
     h4 {
         font-size: 16px;
     }
-    
-    
+
+
 }
+
 /*screen 448*/
-@media (max-width: 448px){
+@media (max-width: 448px) {
     .navbar li.search-bar {
-    font-size: 8px;
-    width: 9vw;
-    margin-bottom: 20px;
-  }
+        font-size: 8px;
+        width: 9vw;
+        margin-bottom: 20px;
+    }
+    
+     .contact-box {
+        padding: 40px 0px;
+        margin: 0;
+        display: flow-root list-item;
+       
+    }
+    .right{
+        margin-top: -20%;
+    }
+    .locat-date{
+        max-width: 300px;
+        margin-left: 30vw;
+    }
+    .relations{
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 426px) {
     .navbar li.search-bar {
         display: none;
     }
-    .second-search-bar{
+
+    .second-search-bar {
         clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
         background-color: #ffffff30;
         align-items: center;
         text-align: center;
         visibility: visible;
-        margin-left:13vw ;
-        margin-right:11vw ;
+        margin-left: 13vw;
+        margin-right: 11vw;
         margin-top: 9px;
         margin-bottom: -20px;
         z-index: 1;
     }
-    
-}
 
+}

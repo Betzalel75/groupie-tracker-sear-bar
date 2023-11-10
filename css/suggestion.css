@@ -1,0 +1,14 @@
+/* Cacher toutes les options par défaut */
+.all-artists-option, .artist-infos-option {
+    display: none;
+}
+
+/* Afficher les options d'AllArtists si la saisie ne commence pas par un chiffre */
+input[type="text"]:not(:placeholder-shown) ~ #suggestion .all-artists-option {
+    display: block;
+}
+
+/* Afficher les options d'ArtistInfos si la saisie commence par un chiffre */
+input[type="text"]:not(:placeholder-shown) ~ #suggestion .artist-infos-option {
+    display: block;
+}

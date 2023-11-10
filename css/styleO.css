@@ -81,12 +81,6 @@ body .row:hover{
 /*Fin du Background*/
 /*-----------------*/
 
-/* body {
-    background: url('images/349131.jpg') fixed no-repeat center/cover;
-    font-family: 'Dancing Script', cursive;
-    font-size: 20px;
-} */
-
 header {
     position: relative;
     z-index: 1;
@@ -176,6 +170,21 @@ h1{
     forced-color-adjust: #fff;
     border: #ccc solid;
     background-color: #16141462;
+}
+
+.no_match{
+    position:relative;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+}
+.no_match img{
+    max-width: 400px;
+}
+
+.no_match h1{
+    border: none;
+    font-size: xx-large;
 }
 
 .info {
@@ -479,8 +488,6 @@ h4:after {
     border-radius: 2px;
     background-color: pink;
 }
-
-/* Media Queries */
 
 
 /* Media Query pour les écrans de taille 480x320 */

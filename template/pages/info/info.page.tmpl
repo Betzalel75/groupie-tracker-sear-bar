@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styleInfo.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <title>Infos</title>
+  <link rel="shortcut icon" href="/css/images/Image1reverse.ico" type="images/ico">
+</head>
+
+<body>
+  <header>
+    <ul class="navbar">
+      <li><a href="javascript:history.back()">Back</a></li>
+      <li><a href="artist">Artist</a></li>
+      <li class="home"><a href="/">Home</a></li>
+      {{template "search" .}}
+    </ul>
+  </header>
+
+  <!-- BACKGROUND -->
+  <div class="container-hexagon">
+    {{template "design"}}
+    {{template "design"}}
+  </div>
+  <!-- FIN DU BACKGROUND -->
+
+  <div class="containt">
+    <img src="/css/images/Image1reverse.png" alt="">
+  </div>
+  <div class="ap">
+    <div class="infos">
+      <div class="chambre2">
+        <div class="contact-box">
+          <div class="left">
+            <img src="{{.Artist.Image}}" alt="">
+          </div>
+          <div class="right">
+            <h4 id="image">{{.Artist.Name}}</h4>
+            <p>Year Active: {{.Artist.CreationDate}}</p>
+            <p>First Album: {{.Artist.FirstAlbum}}</p>
+            <p>Members:</p>
+            <ul>
+              {{range .Artist.Members}}
+              <li>{{.}}</li>
+              {{end}}
+            </ul>
+          </div>
+        </div>
+        <div class="locat-date">
+          <div class="leftld">
+            <p>Locations:</p>
+            <ul>
+              {{range .SingleLocation}}
+              <li>{{.}}:</li>
+              {{end}}
+            </ul>
+          </div>
+          <div class="rightld">
+            <p>Dates:</p>
+            {{range .Date.Dates}}
+            <li>
+              {{.}}
+            </li>
+            {{end}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4 class="titreRelation">Relations</h4>
+  <section class="sectionRelation">
+    <div class="relation-content">
+      {{range $id, $myMap := .Locations}}
+      <div class="relations">
+        {{range $key, $value := $myMap}}
+        <div class="leftld">
+          <p> Locations : {{$key}}</p>
+          <p>Dates :</p>
+          {{range .}}
+          <li>
+            {{.}}
+          </li>
+          {{end}}
+        </div>
+        {{end}}
+      </div>
+      {{end}}
+    </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{{define "search"}}
+<li class="search-bar">
+    <form action="/search" method="GET">
+        <input type="text" name="search" placeholder="Recherche" list="suggestion" required>
+        <datalist id="suggestion">
+            {{range .AllArtists}}
+            <option value="{{.Name}}">
+                {{.Name}} - Artist/Band
+            </option>
+            <option value="{{.FirstAlbum}}">
+                {{.FirstAlbum}}
+            </option>
+            {{end}}
+
+            {{range .ArtistInfos}}
+            <option value="{{.Name}}">
+                {{.CreationDate}}
+                 - {{.Name}}
+                </option>
+            {{end}}
+
+            {{range .UniqueMembers}}
+            <option value="{{.}}">
+                {{.}} - Member
+            </option>
+            {{end}}
+
+            {{range .UniqueLocations}}
+            <option value="{{.}}">{{.}}</option>
+            {{end}}
+        </datalist>
+        <button type="submit">Rechercher</button>
+    </form>
+</li>
+{{end}}
